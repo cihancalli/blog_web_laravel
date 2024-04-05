@@ -45,5 +45,4 @@
             </div>
         </div>
     </header>
-    @include('frontend.person.widgets.sections.about')
 @endsection

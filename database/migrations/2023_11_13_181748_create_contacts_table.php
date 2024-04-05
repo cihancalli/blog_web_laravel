@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone');
             $table->longText('message');
             $table->boolean('isRead')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

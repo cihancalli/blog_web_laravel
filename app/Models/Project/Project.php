@@ -10,4 +10,8 @@ class Project extends Model
 {
     use SoftDeletes;
     use HasFactory;
+
+    function getCategory(){
+        return $this->hasOne('App\Models\Project\ProjectCategory','id','categoryId');
+    }
 }

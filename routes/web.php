@@ -139,3 +139,4 @@ Route::get('/blog', 'App\Http\Controllers\Frontend\BlogController@index')->name(
 Route::get('/blog/{cSlug}', 'App\Http\Controllers\Frontend\BlogController@category')->name('category');
 //Route::get('/blog/{cSlug}/pages/', 'App\Http\Controllers\Frontend\BlogController@category');
 Route::get('/blog/{cSlug}/{pSlug}', 'App\Http\Controllers\Frontend\BlogController@blogPage')->name('blog.page');
+Route::get('/project/{cSlug}/{pSlug}', 'App\Http\Controllers\Frontend\BlogController@projectPage')->name('project.page');

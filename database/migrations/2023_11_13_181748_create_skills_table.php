@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('categoryId');
             $table->string('name');
             $table->foreign('categoryId')->references('id')->on('skill_categories');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

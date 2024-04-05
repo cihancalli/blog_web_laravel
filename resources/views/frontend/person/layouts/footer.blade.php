@@ -1,3 +1,5 @@
+@include('frontend.person.widgets.sections.action')
+@include('frontend.person.widgets.sections.about')
 </main>
 <!-- Footer-->
 <footer class="bg-white py-4 mt-auto">

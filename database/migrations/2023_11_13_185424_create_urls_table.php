@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('short_code')->unique();
             $table->text('original_url');
             $table->integer('view')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

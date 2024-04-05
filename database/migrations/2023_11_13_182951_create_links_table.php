@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('icon');
             $table->integer('view')->default(0);
             $table->foreign('categoryId')->references('id')->on('link_categories');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

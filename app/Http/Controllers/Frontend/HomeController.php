@@ -6,6 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Page\Page;
 use App\Models\Post\Category;
 use App\Models\Post\Post;
+use App\Models\Project\Project;
+use App\Models\Resume\Education;
+use App\Models\Resume\Experience;
+use App\Models\Resume\Skill;
+use App\Models\Resume\SkillCategory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -18,6 +23,11 @@ class HomeController extends Controller
             ->where('published', true)
             ->whereDate('created_at', '<=', Carbon::now()->timezone('Europe/Istanbul'))
             ->paginate(2));
+        view()->share('skills',Skill::orderBy('created_at', 'desc')->get());
+        view()->share('skillCategories',SkillCategory::orderBy('created_at', 'desc')->get());
+        view()->share('experiences',Experience::orderBy('created_at', 'desc')->get());
+        view()->share('educations',Education::orderBy('created_at', 'desc')->get());
+        view()->share('projects',Project::orderBy('created_at', 'desc')->get());
     }
 
     function theme(): string

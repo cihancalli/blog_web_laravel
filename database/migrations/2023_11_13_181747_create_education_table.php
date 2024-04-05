@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('education', function (Blueprint $table) {
             $table->id();
-            $table->integer('startDate');
-            $table->integer('endDate');
+            $table->string('startDate');
+            $table->string('endDate');
             $table->longText('educationName');
             $table->longText('address');
             $table->longText('educationType');
             $table->longText('educationDepartment');
             $table->longText('educationContent');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

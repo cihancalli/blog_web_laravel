@@ -22,5 +22,4 @@
             </div>
         </div>
     </section>
-    @include('frontend.person.widgets.sections.action')
 @endsection

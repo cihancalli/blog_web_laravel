@@ -11,8 +11,8 @@
             </span>
             </h1>
         </div>
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-11 col-xl-9 col-xxl-8">
+        <div class="row gx-1 justify-content-center">
+            <div class="col-lg-11 col-xl-11 col-xxl-11">
                 @include('frontend.person.widgets.sections.experience')
                 @include('frontend.person.widgets.sections.education')
                 <!-- Divider-->

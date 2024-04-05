@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('pageContent');
             $table->string('slug');
             $table->integer('order');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
