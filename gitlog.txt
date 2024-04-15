@@ -1,0 +1,2 @@
+php artisan make:model User\Role -m
+php artisan make:model User\User -m

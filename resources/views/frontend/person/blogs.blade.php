@@ -17,7 +17,9 @@
                 <div class="col-lg-11 col-xl-9 col-xxl-8">
                     @include('frontend.person.widgets.sections.blog-categories')
                     @include('frontend.person.widgets.cards.blog')
-                    {{$posts->links('vendor.pagination.custom')}}
+                    @if (isset($posts) && count($posts) > 0)
+                        {{$posts->links('vendor.pagination.custom')}}
+                    @endif
                 </div>
             </div>
         </div>
