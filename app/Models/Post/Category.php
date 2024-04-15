@@ -15,9 +15,11 @@ class Category extends Model
     public function postCount(){
         return $this->hasMany('App\Models\Post\Post','categoryId','id')->count();
     }
+
     public function postTrashedCount(){
         return $this->hasMany('App\Models\Post\Post','categoryId','id')->onlyTrashed()->count();
     }
+
     public function postPublishedCount(){
         return $this->hasMany('App\Models\Post\Post','categoryId','id')
             ->where('published',1)

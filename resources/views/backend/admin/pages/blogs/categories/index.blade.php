@@ -24,7 +24,7 @@
                         <th>#</th>
                         <th>Image</th>
                         <th>Name</th>
-                        <th>Count</th>
+                        <th>Post Count</th>
                         <th>Created</th>
                         <th>Action</th>
                     </tr>
@@ -34,7 +34,7 @@
                         <th>#</th>
                         <th>Image</th>
                         <th>Name</th>
-                        <th>Count</th>
+                        <th>Post Count</th>
                         <th>Created</th>
                         <th>Action</th>
                     </tr>

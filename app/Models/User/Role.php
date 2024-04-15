@@ -10,4 +10,8 @@ class Role extends Model
 {
     use SoftDeletes;
     use HasFactory;
+
+    public function userCount(){
+        return $this->hasMany('App\Models\User\User','roleId','id')->count();
+    }
 }

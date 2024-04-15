@@ -1,5 +1,5 @@
 @extends('backend.admin.layouts.master')
-@section('titleAdmin','Users')
+@section('titleAdmin','User List')
 @section('contentAdmin')
 
     <!-- Page Heading -->
@@ -24,18 +24,12 @@
                         <th style="text-align:center; vertical-align: middle;">#</th>
                         <th style="text-align:center; vertical-align: middle;">Role</th>
                         <th style="text-align:center; vertical-align: middle;">Username</th>
-                        <th style="text-align:center; vertical-align: middle;">User Code</th>
-                        <th style="text-align:center; vertical-align: middle;">Full Name</th>
 
-                        <th style="text-align:center; vertical-align: middle;">Email</th>
-                        <th style="text-align:center; vertical-align: middle;">Phone Number</th>
-                        <th style="text-align:center; vertical-align: middle;">Timezone</th>
                         <th style="text-align:center; vertical-align: middle;">Level</th>
                         <th style="text-align:center; vertical-align: middle;">Level Point</th>
                         <th style="text-align:center; vertical-align: middle;">Premium</th>
 
                         <th style="text-align:center; vertical-align: middle;">Status</th>
-                        <th style="text-align:center; vertical-align: middle;">Created</th>
                         <th style="text-align:center; vertical-align: middle;">Action</th>
                     </tr>
                     </thead>
@@ -45,20 +39,12 @@
                         <th style="text-align:center; vertical-align: middle;">Role</th>
                         <th style="text-align:center; vertical-align: middle;">Username</th>
 
-                        <th style="text-align:center; vertical-align: middle;">User Code</th>
-                        <th style="text-align:center; vertical-align: middle;">Full Name</th>
-
-                        <th style="text-align:center; vertical-align: middle;">Email</th>
-                        <th style="text-align:center; vertical-align: middle;">Phone Number</th>
-                        <th style="text-align:center; vertical-align: middle;">Timezone</th>
-
                         <th style="text-align:center; vertical-align: middle;">Level</th>
                         <th style="text-align:center; vertical-align: middle;">Level Point</th>
                         <th style="text-align:center; vertical-align: middle;">Premium</th>
 
 
                         <th style="text-align:center; vertical-align: middle;">Status</th>
-                        <th style="text-align:center; vertical-align: middle;">Created</th>
                         <th style="text-align:center; vertical-align: middle;">Action</th>
                     </tr>
                     </tfoot>
@@ -87,24 +73,13 @@
                                 title="{{$user->username}}">{{$user->username}}</td>
 
                             <td style="text-align:center;  vertical-align: middle;"
-                                title="{{$user->userCode}}">{{$user->userCode}}</td>
-                            <td style="text-align:center;  vertical-align: middle;"
-                                title="{{$user->firstname}} {{$user->lastname}}">{{$user->firstname}} {{$user->lastname}}</td>
-
-                            <td style="text-align:center;  vertical-align: middle;"
-                                title="{{$user->email}}">{{$user->email}}</td>
-                            <td style="text-align:center;  vertical-align: middle;"
-                                title="{{$user->phoneNumber}}">{{$user->phoneNumber}}</td>
-                            <td style="text-align:center;  vertical-align: middle;"
-                                title="{{$user->timezone}}">{{$user->timezone}}</td>
-
-                            <td style="text-align:center;  vertical-align: middle;"
                                 title="{{$user->userLevel}}">{{$user->userLevel}}</td>
                             <td style="text-align:center;  vertical-align: middle;"
                                 title="{{$user->userLevelPoint}}">{{$user->userLevelPoint}}</td>
                             <td class="text-center" style="text-align:center;  vertical-align: middle;">
                                 @if($user->userPremium == "1")
-                                    <img src="{{route('home')}}/uploads/premium.png" width="100" style="display:inline-block;">
+                                    <img src="{{route('home')}}/uploads/premium.png" width="100"
+                                         style="display:inline-block;">
                                 @else
                                     <strong class="text-danger">Free User</strong>
                                 @endif
@@ -125,7 +100,6 @@
                                     <a class="alert alert-dark sml" style="text-decoration: none;pointer-events: none">Immutable</a>
                                 @endif
                             </td>
-                            <td style="text-align:center; vertical-align: middle;">{{\Carbon\Carbon::parse($user->created_at)->format('d.m.Y')}}</td>
                             <td width="200" style="text-align:center;  vertical-align: middle;">
                                 <a href="{{route('admin.users.edit', $user->id)}}" title="Edit"
                                    class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>

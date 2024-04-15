@@ -1,5 +1,5 @@
 @extends('backend.admin.layouts.master')
-@section('titleAdmin','Roles')
+@section('titleAdmin','Role List')
 @section('contentAdmin')
 
     <!-- Page Heading -->
@@ -23,6 +23,7 @@
                     <tr>
                         <th>Image</th>
                         <th>Name</th>
+                        <th>User Count</th>
                         <th>Created</th>
                         <th>Action</th>
                     </tr>
@@ -31,6 +32,7 @@
                     <tr>
                         <th>Image</th>
                         <th>Name</th>
+                        <th>User Count</th>
                         <th>Created</th>
                         <th>Action</th>
                     </tr>
@@ -43,8 +45,10 @@
                                      title="{{$role->imageUrl}}">
                             </td>
 
-                            <td style="vertical-align: middle;"
+                            <td style="text-align:center; vertical-align: middle;"
                                 title="{{$role->name}}">{{$role->name}}</td>
+
+                            <td style="text-align:center; vertical-align: middle;" >{{$role->userCount()}}</td>
 
                             <td style="text-align:center; vertical-align: middle;">{{\Carbon\Carbon::parse($role->created_at)->format('d.m.Y')}}</td>
 

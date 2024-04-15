@@ -1,5 +1,5 @@
 @extends('backend.admin.layouts.master')
-@section('titleAdmin','Create User')
+@section('titleAdmin','Create A New User')
 @section('contentAdmin')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -15,14 +15,25 @@
             @endif
             <form method="post" action="{{route('admin.users.store')}}" enctype="multipart/form-data">
                 @csrf
+
                 <div class="form-group">
-                    <label>Profile Image</label>
-                    <input type="file" name="imageUrl" class="form-control" required/>
+                    <div class="row">
+                        <div class="col">
+                            <img id="categoryImagePreview"
+                                 src="{{ (isset($user->imageUrl) && !empty($user->imageUrl)) ? asset($user->imageUrl) : asset('uploads/placeholder.jpg') }}"
+                                 width="303" style="display:inline-block; border: 1px solid black;">
+                        </div>
+
+                        <div class="col-md-12 col-xl-8 align-self-center">
+                            <label for="imageUrl">User Image</label>
+                            <input type="file" name="imageUrl" id="imageUrl" class="form-control"/>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label>User Role</label>
-                    <select name="categoryId" class="form-control" required>
+                    <select name="roleId" class="form-control" required>
                         <option value="">Please Select Role</option>
                         @foreach($roles as $role)
                             <option value="{{$role->id}}">{{$role->name}}</option>
@@ -53,12 +64,7 @@
 
                 <div class="form-group">
                     <label>Phone Number</label>
-                    <input type="tel" name="email" class="form-control" required/>
-                </div>
-
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form-control" required/>
+                    <input type="tel" name="phoneNumber" class="form-control" required/>
                 </div>
 
                 <div class="form-group">
@@ -69,5 +75,6 @@
 
         </div>
     </div>
+    @include('backend.admin.codes.imageUrl')
 
 @endsection

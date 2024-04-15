@@ -26,37 +26,38 @@ class RoleController extends Controller
 
     private function save(Request $request, Role $role)
     {
+        $timezone = 'Europe/Istanbul';
+
+        $request->validate([
+            'name' => 'min:3|max:100',
+            'imageUrl' => 'image|mimes:jpeg,png,jpg|max:16384'
+        ]);
+
         $role->name = $request->name;
 
         if ($request->hasFile('imageUrl')) {
-            $imageName = Str::slug(Str::limit($request->name, 100, "") . '-' .
-                    Carbon::now()->timezone('Europe/Istanbul')) . '.' . $request->imageUrl->getClientOriginalExtension();
-            $request->imageUrl->move(public_path('uploads'), $imageName);
-            $role->imageUrl = route('home') . '/uploads/' . $imageName;
+            $imageName = Str::slug(Str::limit($request->name, 100,"").'-'.Carbon::now()->timezone($timezone)).'.'.$request->imageUrl->getClientOriginalExtension();
+            $request->imageUrl->move(public_path('uploads'),$imageName);
+            $role->imageUrl = route('home').'/uploads/'.$imageName;
         }
+        else{$role->imageUrl = route('home').'/uploads/placeholder.jpg';}
 
         $role->slug = Str::slug($request->name);
 
         $role->save();
-        return redirect()->route('admin.roles.index');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'min:3|max:100',
-            'imageUrl' => 'required|image|mimes:jpeg,png,jpg|max:16384'
-        ]);
         $role = new Role;
         $this->save($request, $role);
+        return redirect()->route('admin.roles.index');
     }
 
     public function show(string $id)
     {
-
         $role = Role::find($id);
         return view('backend.admin.pages.users.roles.update', compact('role'));
-
     }
 
     public function edit(string $id)
@@ -67,12 +68,9 @@ class RoleController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'name' => 'min:3|max:100',
-            'imageUrl' => 'required|image|mimes:jpeg,png,jpg|max:16384',
-        ]);
         $role = Role::findOrFail($id);
         $this->save($request, $role);
+        return redirect()->route('admin.roles.index');
     }
 
     public function undelete($id)
