@@ -26,7 +26,7 @@ class BlogController extends Controller
         $data['categories'] = Category::orderBy('created_at', 'desc')->get();
         $data['post'] = $post;
         $data['posts'] = Post::orderBy('created_at', 'desc')->where('published', true)->take(5)->get();
-        return view('frontend.person.blog-page',$data);
+        return view('frontend.cihancalli.blog-page',$data);
     }
 
     public  function projectPage($cSlug, $pSlug)
@@ -40,7 +40,7 @@ class BlogController extends Controller
         $data['categories'] = Category::orderBy('created_at', 'desc')->get();
         $data['post'] = $post;
         $data['posts'] = Post::orderBy('created_at', 'desc')->where('published', true)->take(5)->get();
-        return view('frontend.person.project-page',$data);
+        return view('frontend.cihancalli.project-page',$data);
     }
 
     public function category($cSlug)
@@ -60,6 +60,6 @@ class BlogController extends Controller
             // You could display an error message or redirect to a different page
         }
 
-        return view('frontend.person.blogs');
+        return view('frontend.cihancalli.blogs');
     }
 }

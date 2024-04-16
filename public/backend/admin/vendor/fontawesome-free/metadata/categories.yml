@@ -1992,7 +1992,7 @@ political:
     - fist-raised
     - flag-usa
     - handshake
-    - person-booth
+    - cihancalli-booth
     - piggy-bank
     - republican
     - vote-yea
@@ -2136,7 +2136,7 @@ shopping:
     - cash-register
     - gift
     - gifts
-    - person-booth
+    - cihancalli-booth
     - receipt
     - shipping-fast
     - shopping-bag
@@ -2426,7 +2426,7 @@ users-people:
     - meh
     - people-arrows
     - people-carry
-    - person-booth
+    - cihancalli-booth
     - poo
     - portrait
     - power-off

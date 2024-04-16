@@ -13,6 +13,7 @@ use App\Models\Resume\Skill;
 use App\Models\Resume\SkillCategory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -30,55 +31,66 @@ class HomeController extends Controller
         view()->share('projects',Project::orderBy('created_at', 'desc')->get());
     }
 
-    function theme(): string
-    {
-        $person = 'person';
-        $main = 'main';
-        $blog = 'blog';
-
-        return $person;
-    }
-
     public function index()
     {
-        return view('frontend.person.home');
+        $host = request()->getHost();
+        if ($host === 'cihancalli') { return view('frontend.cihancalli.home');
+        } else if ($host === 'cihancalli.tr') { return view('frontend.cihancalli.home');
+        } else if ($host === 'zerdasoftware') { return view('frontend.zerdasoftware.mome');
+        } else { return view('frontend.zerdasoftware.home'); }
+
     }
 
     public function resume()
     {
-        return view('frontend.person.resume');
+        return view('frontend.cihancalli.resume');
     }
 
     public function projects()
     {
-        return view('frontend.person.projects');
+        return view('frontend.cihancalli.projects');
     }
 
     public function blogs()
     {
-        return view('frontend.person.blogs');
+        return view('frontend.cihancalli.blogs');
     }
     public function blogTitle()
     {
-        return view('frontend.person.blog-page');
+        return view('frontend.cihancalli.blog-page');
     }
     public function aboutMe()
     {
-        return view('frontend.person.about-me');
+        return view('frontend.cihancalli.about-me');
     }
 
     public function contact()
     {
-        return view('frontend.person.contact');
+        return view('frontend.cihancalli.contact');
+    }
+
+    public function senMessage(Request $request)
+    {
+        $by = "Message send by: ";
+        $tel = "Tel: ";
+        $messages = "Message: ";
+
+        Mail::raw($by.$request->fullname." \n\n".$tel.$request->phone." \n\n".$messages.$request->message,function ($message) use ($request) {
+            $message->from($request->email,'Message');
+            $message->to("info@cihancalli");
+            $message->subject($request->subject);
+
+        });
+        return redirect()->route('contact');
     }
 
     public function privacy()
     {
-        return view('frontend.person.privacy');
+        return view('frontend.cihancalli.privacy');
     }
 
     public function terms()
     {
-        return view('frontend.person.terms');
+        return view('frontend.cihancalli.terms');
     }
 }

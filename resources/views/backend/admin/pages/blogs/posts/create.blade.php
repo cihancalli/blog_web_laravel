@@ -6,10 +6,6 @@
             <h6 class="m-0 font-weight-bold text-primary">@yield('adminTitle')</h6>
         </div>
         <div class="card-body">
-
-
-
-
             @if($errors->any())
                 <div class="alert alert-danger">
                     @foreach($errors->all() as $error)

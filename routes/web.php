@@ -129,6 +129,7 @@ Route::get('/blogs', 'App\Http\Controllers\Frontend\HomeController@blogs')->name
 Route::get('/blogs/blog-title', 'App\Http\Controllers\Frontend\HomeController@blogTitle')->name('blog.title');
 Route::get('/about-me', 'App\Http\Controllers\Frontend\HomeController@aboutMe')->name('aboutMe');
 Route::get('/contact', 'App\Http\Controllers\Frontend\HomeController@contact')->name('contact');
+Route::post('/contact', 'App\Http\Controllers\Frontend\HomeController@senMessage')->name('senMessage');
 
 Route::get('/privacy', 'App\Http\Controllers\Frontend\HomeController@privacy')->name('privacy');
 Route::get('/terms', 'App\Http\Controllers\Frontend\HomeController@terms')->name('terms');
@@ -137,6 +138,16 @@ Route::get('/url/{short_url}', 'App\Http\Controllers\Short\UrlController@redirec
 
 Route::get('/blog', 'App\Http\Controllers\Frontend\BlogController@index')->name('blog.page');
 Route::get('/blog/{cSlug}', 'App\Http\Controllers\Frontend\BlogController@category')->name('category');
-//Route::get('/blog/{cSlug}/pages/', 'App\Http\Controllers\Frontend\BlogController@category');
 Route::get('/blog/{cSlug}/{pSlug}', 'App\Http\Controllers\Frontend\BlogController@blogPage')->name('blog.page');
 Route::get('/project/{cSlug}/{pSlug}', 'App\Http\Controllers\Frontend\BlogController@projectPage')->name('project.page');
+
+/*
+ * Route::get('/', function () {
+    $host = request()->getHost();
+
+    if ($host === 'cihancalli') { return view('frontend.cihancalli.home');
+    } else if ($host === 'cihancalli.tr') { return view('frontend.cihancalli.home');
+    } else if ($host === 'zerdasoftware') { return view('frontend.zerdasoftware');
+    } else { return view('cihancalli'); }
+})->name('home');
+ */

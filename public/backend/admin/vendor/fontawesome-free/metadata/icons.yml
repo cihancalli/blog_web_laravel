@@ -17,7 +17,7 @@ accessible-icon:
     terms:
       - accessibility
       - handicap
-      - person
+      - cihancalli
       - wheelchair
       - wheelchair-alt
   styles:
@@ -1105,7 +1105,7 @@ baby:
       - infant
       - kid
       - offspring
-      - person
+      - cihancalli
       - sprout
   styles:
     - solid
@@ -1824,7 +1824,7 @@ blind:
     terms:
       - cane
       - disability
-      - person
+      - cihancalli
       - sight
   styles:
     - solid
@@ -6948,7 +6948,7 @@ female:
   search:
     terms:
       - human
-      - person
+      - cihancalli
       - profile
       - user
       - woman
@@ -10061,7 +10061,7 @@ hiking:
       - fall
       - fitness
       - outdoors
-      - person
+      - cihancalli
       - seasonal
       - walking
   styles:
@@ -12073,7 +12073,7 @@ male:
     terms:
       - human
       - man
-      - person
+      - cihancalli
       - profile
       - user
   styles:
@@ -14111,7 +14111,7 @@ person-booth:
       - changing room
       - election
       - human
-      - person
+      - cihancalli
       - vote
       - voting
   styles:
@@ -15817,7 +15817,7 @@ running:
       - exercise
       - health
       - jog
-      - person
+      - cihancalli
       - run
       - sport
       - sprint
@@ -16685,7 +16685,7 @@ skating:
       - figure skating
       - fitness
       - ice
-      - person
+      - cihancalli
       - winter
   styles:
     - solid
@@ -16716,7 +16716,7 @@ skiing:
       - fitness
       - olympics
       - outdoors
-      - person
+      - cihancalli
       - seasonal
       - slalom
   styles:
@@ -16732,7 +16732,7 @@ skiing-nordic:
       - cross country
       - fitness
       - outdoors
-      - person
+      - cihancalli
       - seasonal
   styles:
     - solid
@@ -17054,7 +17054,7 @@ snowboarding:
       - fitness
       - olympics
       - outdoors
-      - person
+      - cihancalli
   styles:
     - solid
   unicode: f7ce
@@ -18335,7 +18335,7 @@ swimmer:
       - head
       - man
       - olympics
-      - person
+      - cihancalli
       - pool
       - water
   styles:
@@ -19929,7 +19929,7 @@ universal-access:
     terms:
       - accessibility
       - hearing
-      - person
+      - cihancalli
       - seeing
       - visual impairment
   styles:
@@ -20075,7 +20075,7 @@ user:
       - head
       - human
       - man
-      - person
+      - cihancalli
       - profile
   styles:
     - solid
@@ -20095,7 +20095,7 @@ user-alt:
       - head
       - human
       - man
-      - person
+      - cihancalli
       - profile
   styles:
     - solid
@@ -20112,7 +20112,7 @@ user-alt-slash:
       - head
       - human
       - man
-      - person
+      - cihancalli
       - profile
   styles:
     - solid
@@ -20142,7 +20142,7 @@ user-check:
     terms:
       - accept
       - check
-      - person
+      - cihancalli
       - verified
   styles:
     - solid
@@ -20164,7 +20164,7 @@ user-circle:
       - head
       - human
       - man
-      - person
+      - cihancalli
       - profile
   styles:
     - solid
@@ -20178,7 +20178,7 @@ user-clock:
   search:
     terms:
       - alert
-      - person
+      - cihancalli
       - remind
       - time
   styles:
@@ -20193,7 +20193,7 @@ user-cog:
     terms:
       - admin
       - cog
-      - person
+      - cihancalli
       - settings
   styles:
     - solid
@@ -20208,7 +20208,7 @@ user-edit:
       - edit
       - pen
       - pencil
-      - person
+      - cihancalli
       - update
       - write
   styles:
@@ -20223,7 +20223,7 @@ user-friends:
     terms:
       - group
       - people
-      - person
+      - cihancalli
       - team
       - users
   styles:
@@ -20241,7 +20241,7 @@ user-graduate:
       - commencement
       - gown
       - graduation
-      - person
+      - cihancalli
       - student
   styles:
     - solid
@@ -20257,7 +20257,7 @@ user-injured:
       - injury
       - ouch
       - patient
-      - person
+      - cihancalli
       - sling
   styles:
     - solid
@@ -20272,7 +20272,7 @@ user-lock:
     terms:
       - admin
       - lock
-      - person
+      - cihancalli
       - private
       - unlock
   styles:
@@ -20377,7 +20377,7 @@ user-secret:
       - coat
       - hat
       - incognito
-      - person
+      - cihancalli
       - privacy
       - spy
       - whisper
@@ -20392,7 +20392,7 @@ user-shield:
   search:
     terms:
       - admin
-      - person
+      - cihancalli
       - private
       - protect
       - safe
@@ -20422,7 +20422,7 @@ user-tag:
       - avatar
       - discount
       - label
-      - person
+      - cihancalli
       - role
       - special
   styles:
@@ -20490,7 +20490,7 @@ users-cog:
       - admin
       - cog
       - group
-      - person
+      - cihancalli
       - settings
       - team
   styles:
@@ -21060,7 +21060,7 @@ walking:
       - exercise
       - health
       - pedometer
-      - person
+      - cihancalli
       - steps
   styles:
     - solid
@@ -21234,7 +21234,7 @@ wheelchair:
     terms:
       - accessible
       - handicap
-      - person
+      - cihancalli
   styles:
     - solid
   unicode: f193
